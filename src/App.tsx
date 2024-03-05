@@ -1,13 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header";
-import { Home } from "./pages/Home";
+
+import { Rotas } from "./routes";
 
 export function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <main className="container mx-auto px-4 max-w-[1480px]">
-        <Home />
+        <Rotas />
       </main>
-    </>
+    </BrowserRouter>
   );
 }

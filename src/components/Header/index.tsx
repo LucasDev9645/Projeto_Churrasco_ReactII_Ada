@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Header() {
   return (
     <header className="flex items-center justify-around p-5 bg-amber-500 mb-8">
@@ -5,14 +7,17 @@ export function Header() {
       <nav>
         <ul className="flex gap-4 font-semibold">
           <li>
-            <a href="#" className="bg-amber-600 px-4 py-3 rounded-md">
+            <Link to="/" className="bg-amber-600 px-4 py-3 rounded-md">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="bg-amber-600 px-4 py-3 rounded-md">
+            <Link
+              to="/edit-barbecue"
+              className="bg-amber-600 px-4 py-3 rounded-md"
+            >
               Criar Churrasco
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
