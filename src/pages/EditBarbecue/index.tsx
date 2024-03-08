@@ -45,7 +45,7 @@ export const EditBarbecue = () => {
   function handleRegister(data: RegisterFormData) {
     if (data) {
       const onSubscribe = async () => {
-        const resp = await postApi('churrasco', calcularChurrasco(data));
+        const resp = await postApi('churrascos', calcularChurrasco(data));
         console.log(resp)
       }
       onSubscribe();

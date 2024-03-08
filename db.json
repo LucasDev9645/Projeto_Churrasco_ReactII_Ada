@@ -1,6 +1,16 @@
 {
-    "churrascos": 
-    [
-      
-    ]
-  }
+  "churrascos": [
+    {
+      "id": "52e9",
+      "data": "2024-03-07",
+      "qtd_homens": 3,
+      "qtd_mulheres": 3,
+      "qtd_criancas": 3,
+      "carne_kg": "2,8",
+      "carvao_kg": 9,
+      "pao_de_alho": 15,
+      "refri_l": 2,
+      "cerveja_l": "10,8"
+    }
+  ]
+}
