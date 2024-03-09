@@ -7,7 +7,7 @@ export function Rotas() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/edit-barbecue" element={<EditBarbecue />} />
+      <Route path="/edit-barbecue/:id?" element={<EditBarbecue />} />
     </Routes>
   );
 }

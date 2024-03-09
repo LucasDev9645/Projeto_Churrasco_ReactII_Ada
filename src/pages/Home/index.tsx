@@ -1,42 +1,25 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
+import { BASE_URL } from "../../util/api";
+import { deleteBarbecue } from "../../util/deleteBarbecue";
+
 export function Home() {
-  const churrascoData = [
-    {
-      id: 1,
-      data: "2024-03-04",
-      qtd_homens: 5,
-      qtd_mulheres: 3,
-      qtd_criancas: 2,
-      carne_kg: 10,
-      pao_de_alho: 2,
-      carvao_kg: 5,
-      refri_l: 2,
-      cerveja_l: 3,
-    },
-    {
-      id: 2,
-      data: "2024-03-04",
-      qtd_homens: 5,
-      qtd_mulheres: 3,
-      qtd_criancas: 2,
-      carne_kg: 10,
-      pao_de_alho: 2,
-      carvao_kg: 5,
-      refri_l: 2,
-      cerveja_l: 3,
-    },
-    {
-      id: 3,
-      data: "2024-03-04",
-      qtd_homens: 5,
-      qtd_mulheres: 3,
-      qtd_criancas: 2,
-      carne_kg: 10,
-      pao_de_alho: 2,
-      carvao_kg: 5,
-      refri_l: 2,
-      cerveja_l: 3,
-    },
-  ];
+  const [barbecueData, setBarbecueData] = useState<ChurrascoProps[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(BASE_URL);
+        setBarbecueData(response.data);
+      } catch (error) {
+        console.log("Erro na requisição:", error);
+      }
+    }
+
+    fetchData();
+  }, [barbecueData]);
 
   return (
     <>
@@ -55,23 +38,33 @@ export function Home() {
           </tr>
         </thead>
         <tbody className="bg-gray-200 font-medium">
-          {churrascoData.map((churrasco) => (
-            <tr key={churrasco.id} className="text-center p-4">
-              <td className="p-3">{churrasco.data}</td>
+          {barbecueData.map((barbecue) => (
+            <tr key={barbecue.id} className="text-center p-4">
+              <td className="p-3">{barbecue.data}</td>
               <td>
-                {churrasco.qtd_homens +
-                  churrasco.qtd_mulheres +
-                  churrasco.qtd_criancas}
+                {barbecue.qtd_homens +
+                  barbecue.qtd_mulheres +
+                  barbecue.qtd_criancas}
               </td>
-              <td>{churrasco.carne_kg} Kg</td>
-              <td>{churrasco.pao_de_alho}</td>
-              <td>{churrasco.carvao_kg} Kg</td>
-              <td>{churrasco.refri_l} L</td>
-              <td>{churrasco.cerveja_l} L</td>
+              <td>{barbecue.carne_kg} Kg</td>
+              <td>{barbecue.pao_de_alho}</td>
+              <td>{barbecue.carvao_kg} Kg</td>
+              <td>{barbecue.refri_l} L</td>
+              <td>{barbecue.cerveja_l} L</td>
               <td>
                 <div className="text-sm flex gap-4 justify-center">
-                  <button className="text-yellow-600 uppercase">editar</button>
-                  <button className="text-red-600 uppercase">excluir</button>
+                  <Link to={`/edit-barbecue/${barbecue.id}`}>
+                    <button className="text-yellow-600 uppercase">
+                      editar
+                    </button>
+                  </Link>
+
+                  <button
+                    className="text-red-600 uppercase"
+                    onClick={() => deleteBarbecue(barbecue.id)}
+                  >
+                    excluir
+                  </button>
                 </div>
               </td>
             </tr>
