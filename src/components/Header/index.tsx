@@ -1,13 +1,18 @@
+import { ChefHat, PlusCircle } from "lucide-react";
+
 export function Header() {
   return (
-    <header className="flex items-center justify-around p-5 bg-amber-500 mb-12">
-      <h1 className="text-2xl font-bold tracking-wide"><a href="#">Churrascômetro</a></h1>
-      <nav>
-        <ul className="flex gap-4 font-semibold">
-          {/* <li><a href="#" className="bg-amber-600 px-4 py-3 rounded-md">Home</a></li> */}
-          <li><a href="#" className="bg-amber-600 px-4 py-3 rounded-md">Criar Churrasco</a></li>
-        </ul>
-      </nav>
+    <header className="bg-neutral-800 text-neutral-50 mb-12 border-amber-500 border-b-4">
+      <div className="max-w-[1480px] mx-auto flex flex-wrap gap-4 items-center justify-around sm:justify-between p-5">
+        <h1 className="font-Staatliches text-2xl font-bold tracking-wide">
+          <a href="#" className="flex items-start gap-2 hover:text-amber-500"><ChefHat size={28}/>Churrascômetro</a>
+        </h1>
+        <nav>
+          <ul className="flex gap-4 font-semibold">
+            <li><a href="#" className="flex items-center gap-2 px-4 py-3 rounded-md bg-amber-300 border-2 border-amber-400 hover:bg-amber-400 text-neutral-800 hover:text-amber-950"><PlusCircle />Criar Churrasco</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

@@ -6,9 +6,11 @@ export function App() {
   return (
     <>
       <Header />
+
       <main className="container mx-auto px-4 max-w-[1480px]">
         <Home />
       </main>
+      
       <Footer />
     </>
   );
