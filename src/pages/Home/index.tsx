@@ -1,8 +1,27 @@
 import { Calculator, ClipboardList } from "lucide-react";
 import { NoCards } from "../../components/NoCards";
 import { Card } from "../../components/Card";
+import { Link } from "react-router-dom";
+
+import { deleteBarbecue } from "../../util/deleteBarbecue";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "../../util/api";
+import axios from "axios";
 
 export function Home() {
+  const [barbecueData, setBarbecueData] = useState<ChurrascoProps[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(BASE_URL);
+        setBarbecueData(response.data);
+      } catch (error) {
+        console.log("Erro na requisição:", error);
+      }
+    } fetchData();
+  }, [barbecueData]);
+
   return (
     <main className="flex-1 items-stretch flex flex-col gap-6">
       
@@ -10,14 +29,11 @@ export function Home() {
         <h1 className="flex items-center gap-2 text-xl sm:text-2xl font-semibold border-b-2 border-amber-500 pb-4 mb-8"><ClipboardList size={24} />Lista de Churrascos:</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 m-4">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          {/* <NoCards /> */}
-
+          { 
+            (barbecueData.length > 0) 
+              ? barbecueData.map((barbecue) => (<Card key={barbecue.id} churrasco={barbecue} />)) 
+              : <NoCards /> 
+          }
         </div>
       </section>
 
