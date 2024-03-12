@@ -1,7 +1,6 @@
+import { EditBarbecue } from "../pages/EditBarbecue";
 import { Routes, Route } from "react-router-dom";
-
-import { Home } from "./pages/Home";
-import { EditBarbecue } from "./pages/EditBarbecue";
+import { Home } from "../pages/Home";
 
 export function Rotas() {
   return (

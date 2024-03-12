@@ -5,9 +5,9 @@ export function formatDate(date: string | number | Date): string {
     throw new Error("Data inválida");
   }
 
-  const year = formattedDate.getFullYear();
+  const day   = (formattedDate.getDate() + 1).toString().padStart(2, "0");
   const month = (formattedDate.getMonth() + 1).toString().padStart(2, "0");
-  const day = (formattedDate.getDate() + 1).toString().padStart(2, "0");
+  const year  = formattedDate.getFullYear();
 
   return `${day}-${month}-${year}`;
 }

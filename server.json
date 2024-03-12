@@ -1,40 +1,76 @@
 {
   "churrasco": [
     {
-      "data": "04-09-2024",
-      "qtd_homens": 1,
-      "qtd_mulheres": 2,
-      "qtd_criancas": 0,
-      "carne_kg": "1,0",
-      "carvao_kg": 3,
-      "pao_de_alho": 6,
-      "refri_l": 2,
-      "cerveja_l": "5,4",
-      "id": "2b95"
-    },
-    {
-      "id": "10a3",
-      "data": "22-03-2024",
-      "qtd_homens": 1,
-      "qtd_mulheres": 0,
-      "qtd_criancas": 1,
-      "carne_kg": "0,6",
-      "carvao_kg": 2,
-      "pao_de_alho": 3,
-      "refri_l": 2,
-      "cerveja_l": "1,8"
-    },
-    {
-      "data": "09-03-2024",
+      "id": "91e4",
+      "data": "11-03-2024",
       "qtd_homens": 5,
       "qtd_mulheres": 5,
-      "qtd_criancas": 0,
-      "carne_kg": "3,6",
-      "carvao_kg": 10,
-      "pao_de_alho": 20,
+      "qtd_criancas": 5,
+      "carvao_kg": 15,
+      "refri_l": 3,
+      "pao_de_alho": 25,
+      "carne_kg": "4,6",
+      "cerveja_l": "18,0"
+    },
+    {
+      "data": "11-03-2024",
+      "qtd_homens": 4,
+      "qtd_mulheres": 2,
+      "qtd_criancas": 1,
+      "carne_kg": "2,4",
+      "carvao_kg": 7,
+      "pao_de_alho": 13,
       "refri_l": 2,
+      "cerveja_l": "10,8",
+      "id": "9ddd"
+    },
+    {
+      "data": "15-03-2024",
+      "qtd_homens": 7500,
+      "qtd_mulheres": 7500,
+      "qtd_criancas": 10000,
+      "carne_kg": "7400,0",
+      "carvao_kg": 25000,
+      "pao_de_alho": 40000,
+      "refri_l": 5000,
+      "cerveja_l": "27000,0",
+      "id": "1933"
+    },
+    {
+      "id": "e5e2",
+      "data": "12-03-2024",
+      "qtd_homens": 100,
+      "qtd_mulheres": 100,
+      "qtd_criancas": 50,
+      "carne_kg": "82,0",
+      "carvao_kg": 250,
+      "pao_de_alho": 450,
+      "refri_l": 50,
+      "cerveja_l": "360,0"
+    },
+    {
+      "data": "12-03-2024",
+      "qtd_homens": 5,
+      "qtd_mulheres": 5,
+      "qtd_criancas": 5,
+      "carne_kg": "4,6",
+      "carvao_kg": 15,
+      "pao_de_alho": 25,
+      "refri_l": 3,
       "cerveja_l": "18,0",
-      "id": "8874"
+      "id": "8b2a"
+    },
+    {
+      "id": "2fca",
+      "data": "20-03-2024",
+      "qtd_homens": 0,
+      "qtd_mulheres": 0,
+      "qtd_criancas": 5,
+      "carne_kg": "1,0",
+      "carvao_kg": 5,
+      "pao_de_alho": 5,
+      "refri_l": 2,
+      "cerveja_l": "0,0"
     }
   ]
 }
