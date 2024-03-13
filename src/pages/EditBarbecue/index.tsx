@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -6,9 +6,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+//Contextos
+import { BarbecueContext } from "../../context/calc";
+import { useBarbecueStore } from "../../zustand/barbecueStore";
+
+//Hook
+import { useBarbecue } from "../../hooks/useBarbecue";
+
 import Input from "../../components/Input";
 import { BASE_URL } from "../../util/api";
-import { calculateBarbecue } from "../../util/calculateBarbecue";
 
 const registerFormSchema = z.object({
   barbecueDate: z.string().refine(
@@ -58,6 +64,12 @@ export const EditBarbecue = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  // const { calculateBarbecue } = useContext(BarbecueContext);
+  const calculateBarbecue = useBarbecueStore(
+    (state) => state.calculateBarbecue
+  );
+  // const { calculateBarbecue } = useBarbecue();
+
   const {
     register,
     setValue,
@@ -68,7 +80,7 @@ export const EditBarbecue = () => {
   });
 
   function setFormValues(churrascoData: BarbecueDataProps) {
-    setValue("barbecueDate", churrascoData.data);
+    setValue("barbecueDate", churrascoData.data.split("-").reverse().join("-"));
     setValue("numberOfMen", churrascoData.qtd_homens.toString());
     setValue("numberOfWomen", churrascoData.qtd_mulheres.toString());
     setValue("numberOfchildren", churrascoData.qtd_criancas.toString());
