@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z as zod } from "zod";
 
 import { BASE_URL } from "../../util/api";
+import { ImageCard } from "../../components/ImageCard";
 
 const registerFormSchema = zod.object({
 
@@ -124,23 +125,27 @@ export const EditBarbecue = () => {
           <NotebookPen size={24} /> Criar Novo Churrasco</h1>
       }
 
-      <form className="flex flex-col gap-4 max-w-3xl mx-auto" onSubmit={handleSubmit(handleRegister)} >
+      <div className="flex flex-wrap lg:justify-between justify-around items-center w-full gap-6">
+        <div className="flex-1 sm:min-w-[300px]">
+          <form className="w-full flex flex-col gap-4 max-w-3xl" onSubmit={handleSubmit(handleRegister)} >
+            <Input text="Data" type="date" {...register("barbecueDate")} />
+            {<span className="text-red-500 text-sm">{errors.barbecueDate?.message}</span>}
 
-        <Input text="Data" type="date" {...register("barbecueDate")} />
-        {<span className="text-red-500 text-sm">{errors.barbecueDate?.message}</span>}
+            <Input text="Quantidade de Homens:" type="number" min={0} {...register("numberOfMen")} />
+            {<span className="text-red-500 text-sm">{errors.numberOfMen?.message}</span>}
 
-        <Input text="Quantidade de Homens:" type="number" min={0} {...register("numberOfMen")} />
-        {<span className="text-red-500 text-sm">{errors.numberOfMen?.message}</span>}
+            <Input text="Quantidade de Mulheres" type="number" min={0} {...register("numberOfWomen")} />
+            {<span className="text-red-500 text-sm">{errors.numberOfWomen?.message}</span>}
 
-        <Input text="Quantidade de Mulheres" type="number" min={0} {...register("numberOfWomen")} />
-        {<span className="text-red-500 text-sm">{errors.numberOfWomen?.message}</span>}
+            <Input text="Quantidade de Crianças" type="number" min={0} {...register("numberOfchildren")} />
+            {<span className="text-red-500 text-sm">{errors.numberOfchildren?.message}</span>}
 
-        <Input text="Quantidade de Crianças" type="number" min={0} {...register("numberOfchildren")} />
-        {<span className="text-red-500 text-sm">{errors.numberOfchildren?.message}</span>}
-
-        <button className="bg-amber-500 p-3 rounded-md text-lg font-semibold hover:brightness-105 uppercase" 
-          type="submit">{isEditing ? "Atualizar" : "Salvar"}</button>
-      </form>
+            <button className="w-full bg-amber-500 text-amber-950 outline-none ring-amber-700 focus-within:ring-4 p-3 rounded-md text-xl font-semibold hover:brightness-105 uppercase" 
+              type="submit">{isEditing ? "Atualizar" : "Salvar"}</button>
+          </form>
+        </div>
+        <ImageCard />
+      </div>
     </main>
   );
 };

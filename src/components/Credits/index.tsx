@@ -5,7 +5,7 @@ import { Laptop, X } from "lucide-react";
 export function Credits() {
     return (
         <Dialog.Root>
-            <Dialog.Trigger className="font-semibold text-amber-400 hover:text-amber-500">Frontline Coders</Dialog.Trigger>
+            <Dialog.Trigger className="font-semibold text-amber-400 hover:text-amber-500 rounded-md p-1 outline-none ring-amber-500 focus-within:ring-2">Frontline Coders</Dialog.Trigger>
             <Dialog.Portal>
                 <Dialog.Overlay className="inset-0 fixed bg-black/50 flex justify-center items-center">
                     <Dialog.Content className="flex flex-wrap md:flex-nowrap relative bg-amber-50 text-amber-950 outline-none rounded-md ring-2 m-5 ring-amber-400">
