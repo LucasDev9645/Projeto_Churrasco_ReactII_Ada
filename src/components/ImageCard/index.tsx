@@ -1,4 +1,4 @@
-import TestImage from "../../assets/01.png"
+import TestImage from "../../assets/01.jpg"
 
 export function ImageCard() {
     return (

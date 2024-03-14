@@ -1,3 +1,16 @@
 {
-  "churrasco": []
+  "churrasco": [
+    {
+      "data": "14-03-2024",
+      "qtd_homens": 0,
+      "qtd_mulheres": 0,
+      "qtd_criancas": 0,
+      "carne_kg": "0,0",
+      "carvao_kg": 0,
+      "pao_de_alho": 0,
+      "refri_l": 2,
+      "cerveja_l": "0,0",
+      "id": "de0d"
+    }
+  ]
 }
