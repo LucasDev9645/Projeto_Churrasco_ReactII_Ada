@@ -1,2 +1,3 @@
 // Use npm run server
-export const BASE_URL = "http://localhost:3333/churrasco";
+export const BASE_URL =
+  "https://json-server-churrascometro.onrender.com/churrascos";
