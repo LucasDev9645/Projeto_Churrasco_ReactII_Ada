@@ -1,28 +1,16 @@
 {
   "churrasco": [
     {
-      "data": "31-03-2024",
-      "qtd_homens": 10,
-      "qtd_mulheres": 10,
+      "data": "14-03-2024",
+      "qtd_homens": 0,
+      "qtd_mulheres": 0,
       "qtd_criancas": 0,
-      "carne_kg": "7,2",
-      "carvao_kg": 20,
-      "pao_de_alho": 40,
-      "refri_l": 4,
-      "cerveja_l": "36,0",
-      "id": "2b95"
-    },
-    {
-      "data": "30-03-2024",
-      "qtd_homens": 10,
-      "qtd_mulheres": 10,
-      "qtd_criancas": 20,
-      "carne_kg": "11,2",
-      "carvao_kg": 40,
-      "pao_de_alho": 60,
-      "refri_l": 8,
-      "cerveja_l": "36,0",
-      "id": "10a3"
+      "carne_kg": "0,0",
+      "carvao_kg": 0,
+      "pao_de_alho": 0,
+      "refri_l": 2,
+      "cerveja_l": "0,0",
+      "id": "de0d"
     }
   ]
 }

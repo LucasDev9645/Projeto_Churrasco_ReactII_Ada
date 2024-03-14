@@ -1,19 +1,20 @@
 import { BrowserRouter } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
-
-import { BarbecueProvider } from "./context/calc";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { Rotas } from "./routes";
+import { BarbecueProvider } from "./context/calc";
+import { Toaster } from "react-hot-toast";
+import { Rotas } from "./Routes/routes";
 
 export function App() {
   return (
     <BrowserRouter>
       <BarbecueProvider>
         <Header />
-        <main className="container mx-auto px-4 max-w-[1480px]">
+        <main className="flex-1 container mx-auto px-4 max-w-[1480px]">
           <Rotas />
           <Toaster />
         </main>
+        <Footer />
       </BarbecueProvider>
     </BrowserRouter>
   );

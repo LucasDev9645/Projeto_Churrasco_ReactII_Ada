@@ -34,8 +34,6 @@ Este projeto consiste em uma aplicação web para gerenciar churrascos, onde os 
 3. Instale as dependências: `npm install`
 4. Execute o projeto: `npm start`
 
-
-
 ## 👷 Autores:
 
 - [Raphael Moura](https://github.com/Raphaell-Alves)
